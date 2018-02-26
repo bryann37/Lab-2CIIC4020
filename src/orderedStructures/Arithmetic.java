@@ -20,11 +20,14 @@ public class Arithmetic extends Progression {
 		return "Arith(" + (int) this.firstValue() + "," + (int) commonDifference + ")";
 		
 	}
-	
-	@Override 
-	public double getTerm(int index){
-		return index;
+	@Override
+	public double getTerm(int n) throws IndexOutOfBoundsException { 
+		if (n <= 0) 
+			throw new IndexOutOfBoundsException("printAllTerms: Invalid argument value = " + n); 
+
+		double value = this.firstValue() + commonDifference * (n-1); 
 		
+		return value; 
 	}
 	
 

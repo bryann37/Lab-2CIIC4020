@@ -21,5 +21,15 @@ public class Geometric extends Progression {
 		return "Geom(" + (int) this.firstValue() + "," + (int) commonFactor + ")";
 		
 	}
+	
+	@Override
+	public double getTerm(int n) throws IndexOutOfBoundsException { 
+		if (n <= 0) 
+			throw new IndexOutOfBoundsException("printAllTerms: Invalid argument value = " + n); 
+
+		double value = this.firstValue() * commonFactor * Math.pow( commonFactor ,n-1); 
+		
+		return value; 
+	}
 
 }
